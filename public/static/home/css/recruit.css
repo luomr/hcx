@@ -1,0 +1,22 @@
+
+/*尾页*/
+.navbar-collapse{
+	background-color:#262626;
+}
+.navbar-collapse p{
+	color:#fff;
+}
+#rew_top{
+	width:100%;
+	height:200px;
+}
+#rew{
+	width:250px;
+	height:150px;
+	float:left;
+	
+}
+.a{
+	width:510px;
+	margin:20px auto;
+}

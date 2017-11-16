@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>产品展示</title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/product_list.css">
+	</head>
+	<body>
+		<!-- 侧边导航 -->
+      {include file="public/r_nav" /}
+    <!-- 导航栏 -->
+    {include file="public/t_nav"}
+      <!-- 搜索框 -->
+      <div class="container">
+        <div class="row">
+            <form action="{:url('index/search')}" method="post" class="form-inline" role="form">
+            <div class="col-md-3 col-md-offset-9">
+              <div class="input-group" >
+                    <input type="text" name="tit" class="form-control"  placeholder="请输入关键字">
+                </div>
+                    <button type="submit" class="btn btn-default">提交</button>
+            </div>
+          </form>
+        </div>
+      </div>
+       <!-- 海报 -->
+      <div class="row">
+        <div class="col-md-12">
+          <img src="__STATIC__/home/pic/{$img.img}" class="img-responsive" alt="Cinque Terre">
+        </div>
+      </div>
+      <!-- 产品展示 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>OUR PRODUCTS</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center" id="o">
+            <ul class="nav" id="a">
+                {foreach name="nav" item="vo"}
+                {if  condition="($vo.state == 2)"}
+                <li><a href="/home/product/classi?name={$vo.name}"><span>{$vo.name}</span></a>
+                {/if}
+                <ul class="nav" id="but">
+                  {foreach name="classified" item="k"}
+                  {if  condition="($vo.id == $k.path)"}
+                  <li><a href="/home/product/classified?name={$vo.name}&class={$k.name}"><span>{$k.name}</span></a></li>
+                  {/if}
+                  {/foreach}
+                </ul>
+              </li>
+              {/foreach}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          {foreach name='product' item='vo'}
+          <div class="col-md-4">
+            <a href="/home/productdet/index?id={$vo.id}"><img src="__STATIC__/home/pic/product/{$vo.img}" class="img-responsive" alt="Cinque Terre"></a>
+            <h4><a href="/home/productdet/index?id={$vo.id}">{$vo.name}</a></h4>
+            <p><a href="/home/productdet/index?id={$vo.id}">{$vo.quality}</a></p>
+            <p>价格:<strong>{$vo.price}</strong></p>
+            <p>{$vo.explain}</p>
+          </div>
+          {/foreach}
+        </div>
+      </div>
+       <div class="container">
+        <div class="row">   
+          <div class="col-md-12 text-center">
+               <ul class="pagination">
+                {$page}
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- 页尾 -->
+      {include file="public/b_nav"}
+	</body>
+</html>

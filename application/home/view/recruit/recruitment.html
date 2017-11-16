@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>企业招聘</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/recruitment.css">
+	</head>
+	<body>
+		<!-- 侧边导航 -->
+			{include file="public/r_nav" /}
+		<!-- 导航栏 -->
+		{include file="public/t_nav"}
+			<!-- 搜索框 -->
+			<div class="container">
+				<div class="row">
+					<form action="{:url('index/search')}" method="post" class="form-inline" role="form">
+						<div class="col-md-3 col-md-offset-9">
+							<div class="input-group" >
+						        <input type="text" name="tit" class="form-control"  placeholder="请输入关键字">
+						    </div>
+						        <button type="submit" class="btn btn-default">提交</button>
+						</div>
+					</form>
+				</div>
+			</div>
+				<!-- 海报 -->
+				<div class="row">
+				<div class="col-md-12">
+					<img src="__STATIC__/home/pic/{$img.img}" class="img-responsive" alt="Cinque Terre">
+				</div>
+			</div>
+			<!-- 地址 -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1>Recruitment Information </h1>
+					</div>
+				</div>
+			</div>
+			<hr/>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+		                <table class="table">
+		                	<caption><h3>招贤纳士</h3></caption>
+				                <tr>
+				                	<td>{$job.name}</td>
+				                </tr>
+				                <tr>
+				                	<td>{$job.address}</td>
+				                </tr>
+				                <tr>
+				                	<td>{$job.time|date="Y-m-d H:i:s",###}</td>
+				                </tr>
+				                <tr>
+				                	<td>{$job.explain}</td>
+				                </tr>
+		                </table>
+		              </div>
+		              <div class="col-md-6">
+		              	<div class="col-md-12"><h4>提交你的简历</h4></div>
+						<form action="{:url('recruitment/add')}" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="{$job.id}">
+							<input type="file" name="file" class="btn btn-default" value="">
+							<br/><br/>
+              				<input type="submit" value="提交简历" class="btn btn-default">
+              				<br/><br/><br/><br/>
+            		</div>
+				</div>
+			</div>
+			<!-- 页尾 -->
+			{include file="public/b_nav"}
+		
+	</body>
+</html>

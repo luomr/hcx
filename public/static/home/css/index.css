@@ -1,0 +1,140 @@
+
+/*轮播图*/	
+#lunbo{
+	width:100%;
+	height:500px;
+	position:relative;
+}
+.banner1 li{
+    transition: opacity 0.8s;
+    opacity: 0;
+    position: absolute;
+}
+.banner1 .actrve{
+    opacity: 1;
+}
+.lunbo{
+    width: 200px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 50px;
+}
+.lunbo li{
+    cursor: pointer;
+    width:15px;
+    height: 15px;
+    line-height:15px;
+    text-align: center;
+    border-radius:50%;
+    float:left;
+    background: #dddddd;
+    margin-left: 8px;
+}
+.lunbo li.actrve{
+    background: red;
+    }
+.left{
+	cursor: pointer;
+    width: 70px;
+    height: 60px;
+    background:rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 60px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:75px;
+    margin: auto;
+    display:none;
+}
+.right{
+    cursor: pointer;
+    width: 70px;
+    height: 60px;
+    background:rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 60px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right:0;
+    margin: auto;
+    display:none;
+}
+/*关于我们*/
+/*左边*/
+#about{
+	width:100%;
+	height:150px;
+	margin-top:150px;
+}
+#pen{
+	width:170px;
+	height:5px;
+	margin:20px auto;
+	background-color:black;
+}
+#preset{
+	width:450px;
+	margin:0 auto;
+	margin-top:50px;
+}
+#b{
+	width:100%;
+	height:250px;
+	margin-top:100px;
+}
+#bu{
+	width:150px;
+	height:50px;
+	margin:50px auto;
+}
+#but{
+	width:150px;
+	height:50px;
+	
+}
+/*右边*/
+#picb1{
+	margin-top:140px;
+}
+#picb2{
+	width:250px;
+	z-index:1;
+	margin:-600px 300px;
+}
+/*我们的产品*/
+.navbar-inverse{
+	background-color:#F0F0F0;
+}
+#our{
+	width:100%;
+	margin-left:100px;
+}
+.col-md-5{
+	margin-top:30px;
+}
+/*导航*/
+
+/*图片*/
+#product{
+	width:1170px;
+	margin:0 auto;
+}
+#product div{
+	float:left;
+}
+/*新闻*/
+.col-md-6 h1{
+	margin-top:50px;
+}
+/*友情链接*/
+.col-md-12 ul li{
+	list-style:none;
+	float:left;
+	margin-left:20px;
+
+}

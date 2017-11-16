@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>关于我们</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/about.css">
+	</head>
+	<body>
+		<!-- 侧边导航 -->
+			{include file="public/r_nav" /}
+		<!-- 导航栏 -->
+		{include file="public/t_nav"}
+			<!-- 搜索框 -->
+			<div class="container">
+				<div class="row">
+					<form action="{:url('index/search')}" method="post" class="form-inline" role="form">
+						<div class="col-md-3 col-md-offset-9">
+							<div class="input-group" >
+						        <input type="text" name="tit" class="form-control"  placeholder="请输入关键字">
+						    </div>
+						        <button type="submit" class="btn btn-default">提交</button>
+						</div>
+					</form>
+				</div>
+			</div>
+				<!-- 海报 -->
+			<div class="row">
+				<div class="col-md-12">
+					<img src="__STATIC__/home/pic/{$img.img}" class="img-responsive" alt="Cinque Terre">
+				</div>
+			</div>
+			<!-- about -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>ABOUT US</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="__STATIC__/home/pic/{$about.0.img}" class="img-responsive" alt="Cinque Terre">
+				</div>
+				<div class="col-md-6">
+					{$about.0.content}
+				</div>
+				<div class="col-md-6">
+					{$about.1.content}
+				</div>
+				<div class="col-md-6">
+					<img src="__STATIC__/home/pic/{$about.1.img}" class="img-responsive" alt="Cinque Terre">
+				</div>
+				<div class="col-md-6">
+					<img src="__STATIC__/home/pic/{$about.2.img}" class="img-responsive" alt="Cinque Terre">
+				</div>
+				<div class="col-md-6">
+					{$about.2.content}
+				</div>
+				<div class="col-md-6 text-center">
+					{$about.3.content}
+				</div>
+				<div class="col-md-6">
+					<img src="__STATIC__/home/pic/{$about.3.img}" class="img-responsive" alt="Cinque Terre">
+				</div>
+			</div>
+		</div>
+			<!-- 页尾 -->
+			{include file="public/b_nav"}
+	</body>
+</html>

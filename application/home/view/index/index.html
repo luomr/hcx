@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>广州市惠焯烜服装设计有限公司</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/index.css">
+		<script src="__STATIC__/home/js/banner.js"></script>
+	</head>
+	<body>
+		<!-- 侧边导航 -->
+		{include file="public/r_nav" /}
+		<!-- 导航栏 -->
+		{include file="public/t_nav"}
+			<!-- 搜索框 -->
+			<div class="container">
+				<div class="row">
+					<form action="{:url('index/search')}" method="post" class="form-inline" role="form">
+						<div class="col-md-3 col-md-offset-9">
+							<div class="input-group" >
+						        <input type="text" name="tit" class="form-control"  placeholder="请输入关键字">
+						    </div>
+						        <button type="submit" class="btn btn-default">提交</button>
+						</div>
+					</form>	
+				</div>
+			</div>
+			</div>
+				<!-- 轮播图 -->
+				<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="lunbo">
+						<div class="banner">
+						    <ul class="banner1">
+						    	{foreach $banner as $v}
+						        <li class="actrve">
+						            <a href="/home/product/index"><img src="__STATIC__/home/pic/banner/{$v['img']}" class="img-responsive" alt=""></a>
+						        </li>
+						       	{/foreach}					        
+						    </ul>
+						    <ul class="lunbo">
+						    	{foreach name="banner" item="vo" key="k"}
+						        <li class="actrve">{$k+1}</li>
+						        {/foreach}
+						    </ul>
+						    <div class="left">上一页</div>
+						    <div class="right">下一页</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 关于我们 -->
+			<nav class="navbar-default" role="navigation">
+				<div class="container">
+				<div class="row">
+					<!-- 左边 -->
+					<div class="col-md-6">
+						<div id="about">
+							<div id="pen"></div>
+							<h1 class="text-center">ABOUT US</h1>
+							<h5 class="text-center">关于我们</h5>
+						</div>
+						<div id="preset">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;广州市惠焯烜服装设计有限公司是一家大型的专业从事皮草皮革服装以及相关产品研发设计生产销售为一体的服饰公司，并拥有专业的生产线管理完善的工厂，企业的长远规划为公司打造百年品牌奠定了坚实基础。<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;公司始终坚持产品的创新，差异化；市场的整合，全局化；利益共享化，在变化中找准自我定位的经营理念，以追求客户最大满意为服务宗旨，紧随时代流行趋势使各类服饰产品始终走在市场前沿，做到款款流行。公司拥有各类先进制衣设备和优厚的基础设施，拥有一支数千人的精良队伍。公司按国际质量体系进行先进的生产管理，生产原料的严格筛先，生产过程的全程控制，保证了产品的高质量......
+							</p>
+						</div>
+						<div id="b">
+							<div id="bu">
+							<form action="/home/about/index" method="get">
+								<input id="but" type="submit" value="MORE++">
+							</form>
+							</div>
+						</div>
+					</div>
+					<!-- 右边 -->
+					<div class="col-md-6">
+						<div id="picb1">
+							<a href="/home/about/index"><img src="__STATIC__/home/pic/1_01-1_5112_tzw7.jpg" class="img-responsive"></a>
+						</div>
+						<div id="picb2">
+							<a href="/home/about/index"><img src="__STATIC__/home/pic/1_01-1_5113_n648.jpg" class="img-responsive"></a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</nav>
+			<!-- 我们的产品 -->
+			<nav class="navbar-inverse" role="navigation">
+				<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<a href="/home/product/index"><h1>OUR PRODUCTS</h1></a>
+						<a href="/home/product/index"><h5>我们的产品</h5></a>
+					</div>
+					<!-- 导航 -->
+				<nav class="navbar-default" role="navigation">
+					<div class="col-md-7">
+						<ul class="nav-justified">
+							{foreach name="nav" item="vo"}
+							{if  condition="($vo.state == 2)"}
+							<li>
+								<a href="/home/product/index?name={$vo.name}"><span>{$vo.name}</span></a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>		
+					</div>
+				</nav>
+			<div class="container">
+				<div class="col-md-12">
+					<div id="product">
+						<div>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro1.png" class="img-responsive"></a>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro2.png" class="img-responsive"></a>
+						</div>
+						<div>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro3.png" class="img-responsive"></a>
+						</div>	
+						<div>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro4.png" class="img-responsive"></a>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro5.png" class="img-responsive"></a>
+						</div>
+						<div>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro6.png" class="img-responsive"></a>
+							<a href="/home/product/index"><img src="__STATIC__/home/pic/pro7.png" class="img-responsive"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 新闻 -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<a href="/home/news/index"><h1>NEWS INFORMATION</h1></a>
+						<a href="/home/news/index"><h5>新闻动态</h5></a>
+						<a href="/home/news/index"><img src="__STATIC__/home/pic/ohtl.jpg" class="img-responsive"></a>
+					</div>
+					<div class="col-md-6">
+						<table class="table">
+							<caption><h3>| <a href="">公司新闻</a></h3></caption>
+							{foreach name="new" item="vo"}
+							<tr>
+								<td>
+									<a href="/home/newsdet/index?id={$vo.id}"><h5>{$vo.name}</h5></a>
+									<h6>{$vo.time|date="Y-m-d H:i:s",###}</h6>
+									<h5>{$vo.title}</h5>
+								</td>
+							</tr>
+							{/foreach}
+						</table>
+					</div>
+				</div>
+			</div>
+				<!-- 友情链接 -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul>
+							<li><h4>友情链接：</h4></li>
+							{foreach name="link" item="vo"}
+							<li><a href="{$vo.link}"><h5>{$vo.name}</h5></a></li>
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+			</div>
+			</nav>
+			<!-- 页尾 -->
+			{include file="public/b_nav"}
+	</body>
+</html>

@@ -1,0 +1,17 @@
+
+/*新闻展示*/
+.col-md-12 h1{
+	height:150px;
+	line-height:150px;
+}
+#title{
+	width:100%;
+	background-color:#F0F0F0;
+	margin-bottom:20px;
+}
+.col-md-12 span{
+	height:30px;
+	line-height:30px;
+}
+/*评论*/
+

@@ -1,0 +1,16 @@
+
+/*新闻*/
+ul li{
+	list-style:none;
+}
+.col-md-12 h1{
+	height:150px;
+	line-height:150px;
+}
+.col-md-2{
+	height:150px;
+}
+.col-md-10{
+	height:150px;
+	border-bottom:1px solid #4e4e4e;
+}

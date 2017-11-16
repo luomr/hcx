@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新闻列表</title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/news_list.css">
+	</head>
+	<body>
+		<!-- 侧边导航 -->
+      {include file="public/r_nav" /}
+    <!-- 导航栏 -->
+    {include file="public/t_nav"}
+      <!-- 搜索框 -->
+      <div class="container">
+        <div class="row">
+            <form action="{:url('index/search')}" method="post"class="form-inline" role="form">
+            <div class="col-md-3 col-md-offset-9">
+              <div class="input-group" >
+                    <input type="text" name="tit" class="form-control"  placeholder="请输入关键字">
+                </div>
+                    <button type="submit" class="btn btn-default">提交</button>
+            </div>
+          </form>
+        </div>
+      </div>
+       <!-- 海报 -->
+      <div class="row">
+        <div class="col-md-12">
+          <img src="__STATIC__/home/pic/{$img.img}" class="img-responsive" alt="Cinque Terre">
+        </div>
+      </div>
+      <!-- 新闻 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>NEWS INFORMATION</h1>
+          </div>
+        </div>
+      </div>
+          <!-- biaoti -->
+      <div class="container">
+        <ul>
+          {foreach name="news" item="vo"}
+          <li>
+            <div class="row">
+              <div class="col-md-2">
+                <a href="/home/newsdet/index?id={$vo.id}"><img src="__STATIC__/home/pic/new/{$vo.img}" class="img-responsive" alt="Cinque Terre"></a>
+              </div>
+              <div class="col-md-10">
+                <h4><a href="/home/newsdet/index?id={$vo.id}">{$vo.name}</a></h4>
+                <h6>{$vo.time|date="Y-m-d H:i:s",###}</h6>
+                <p><a href="/home/newsdet/index?id={$vo.id}">{$vo.title}</a></p>
+              </div>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+          <div class="container">
+            <div class="row"> 
+              <div class="col-md-12 text-center">
+                <ul class="pagination">
+                {$page}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 页尾 -->
+      {include file="public/b_nav"}
+	</body>
+</html>

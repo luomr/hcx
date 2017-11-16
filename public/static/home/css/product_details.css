@@ -1,0 +1,12 @@
+
+/*产品展示*/
+.col-md-12 h1{
+	height:150px;
+	line-height:150px;
+}
+.panel{
+	margin-top:50px;
+}
+.panel-heading{
+	background-color:#F5F5F5;
+}

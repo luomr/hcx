@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新闻详情</title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/news_details.css">
+	</head>
+	<body>
+		<!-- 侧边导航 -->
+      {include file="public/r_nav" /}
+    <!-- 导航栏 -->
+    {include file="public/t_nav"}
+      <!-- 搜索框 -->
+      <div class="container">
+        <div class="row">
+            <form action="{:url('index/search')}" method="post"class="form-inline" role="form">
+            <div class="col-md-3 col-md-offset-9">
+              <div class="input-group" >
+                    <input type="text" name="tit" class="form-control"  placeholder="请输入关键字">
+                </div>
+                    <button type="submit" class="btn btn-default">提交</button>
+            </div>
+          </form>
+        </div>
+      </div>
+       <!-- 海报 -->
+      <div class="row">
+        <div class="col-md-12">
+          <img src="__STATIC__/home/pic/{$img.img}" class="img-responsive" alt="Cinque Terre">
+        </div>
+      </div>
+      <!-- 产品展示 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>News information</h1>
+          </div>
+          <div class="col-md-12 text-center">
+            <h3><strong>{$new.name}</strong></h3><br/>
+            <h5>作者:{$new.author} | 发布时间: {$new.time|date="Y-m-d H:i:s",###} </h5><br/>
+          </div>
+          <div id="title" class="col-md-12">
+            <span>{$new.title} </span>
+          </div>
+          <div class="col-md-12">
+           <img src="__STATIC__/home/pic/new/{$new.img}" class="img-responsive" alt="Cinque Terre">
+          </div>
+          <div class="col-md-12">
+           <p>{$new.new}</p>
+          </div>
+          <!-- 评论 -->
+          <div class="col-md-12">
+            <form role="form" action="{:url('newsdet/add')}" method="post">
+              <div class="form-group">
+                <label></label>
+                <input type="hidden" name="name" value="{$Think.session.username}">
+              </div>
+              <div class="form-group">
+                <label></label>
+                <input type="hidden" name="time" value="<?php echo time(); ?>">
+              </div>
+              <div class="form-group">
+                <label></label>
+                <input type="hidden" name="sid" value="{$new.id}">
+              </div>
+              <div class="form-group">
+                <label><h3>写评论</h3></label>
+                <textarea name="comment" value="" class="form-control" rows="3" placeholder="留点评论、、、"></textarea>
+              </div>
+            <div class="col-md-12 text-right">
+              <input type="submit" value="发布评论" class="btn btn-default">
+            </div>
+            </form>
+          </div>
+          <div class="col-md-12">
+            <table class="table table-bordered">
+             {foreach name="comment" item="vo"}
+              {if  condition="!is_null($vo)"}
+              <tr>
+                <td>
+                  <h4>{$vo.name}</h4>
+                  <h6>时间：{$vo.time|date="Y-m-d H:i:s",###}</h6>
+                  <h5>{$vo.comment}</h5>
+                </td>
+              </tr>
+              {/if}
+              {/foreach}
+            </table>
+          </div>
+        </div>
+      </div>
+        <!-- 页尾 -->
+      {include file="public/b_nav"}
+	</body>
+</html>

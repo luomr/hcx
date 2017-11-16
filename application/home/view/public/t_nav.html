@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/home/css/nav.css">
+	</head>
+	<body>
+		<nav class="navbar-default" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1" id="logo">
+							<a href="/home/index/index"><img src="__STATIC__/home/pic/i9es.png" class="img-responsive" alt="Cinque Terre"></a>
+					</div>
+					
+					<div class="col-md-8 ">
+						<ul class="nav-justified">
+							{foreach name="nav" item="vo"}
+							{if  condition="($vo.state == 1)"}
+							<li><a href="/home/{$vo.link}/index">{$vo.name}</a></li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div><div class="col-md-3">
+						<ul class="nav-justified">
+							{if !session('username')}
+							<li>
+								<a href="{:url('login/index')}">登录</a> 
+								<a href="{:url('register/index')}">注册</a> 
+							{else /}
+							<a href="{:url('register/user')}">{$Think.session.username}</a>,欢迎你 
+							<a href="{:url('login/loginout')}">退出</a> 
+							{/if}
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</nav>
+	</body>
+</html>

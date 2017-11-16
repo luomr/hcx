@@ -1,0 +1,20 @@
+
+/*海报*/
+.col-md-12 h1{
+	height:150px;
+	line-height:150px;
+}
+/*about*/
+.col-md-6 p{
+	height:500px;
+	margin-top:50px;
+}
+.col-md-6{
+	height:500px;
+}
+.col-md-6 h4{
+	margin-top:50px;
+}
+
+
+
